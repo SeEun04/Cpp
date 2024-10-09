@@ -9,7 +9,7 @@ class Player {
 	int card[3];
 	string name;
 public:
-	Player() :Player("ÇÃ·¹ÀÌ¾î") { }
+	Player() :Player("í”Œë ˆì´ì–´") { }
 	Player(string name) { this->name = name; }
 	string getName() { return name; }
 	bool playGambling();
@@ -36,12 +36,12 @@ public:
 };
 
 GamblingGame::GamblingGame() {
-	cout << "*****°·ºí¸µ °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù. *****" << endl;
+	cout << "*****ê°¬ë¸”ë§ ê²Œìž„ì„ ì‹œìž‘í•©ë‹ˆë‹¤. *****" << endl;
 	string name;
-	cout << "Ã¹¹øÂ° ¼±¼ö ÀÌ¸§>>";
+	cout << "ì²«ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„>>";
 	cin >> name;
 	player[0] = Player(name);
-	cout << "µÎ¹øÂ° ¼±¼ö ÀÌ¸§>>";
+	cout << "ë‘ë²ˆì§¸ ì„ ìˆ˜ ì´ë¦„>>";
 	cin >> name;
 	player[1] = Player(name);
 	getchar();
@@ -54,10 +54,10 @@ void GamblingGame::play() {
 		getchar();
 		if (player[i % 2].playGambling()) {
 			isGameCompleted = true;
-			cout << "\t" << player[i % 2].getName() << "´Ô ½Â¸®!!" << endl;
+			cout << "\t" << player[i % 2].getName() << "ë‹˜ ìŠ¹ë¦¬!!" << endl;
 		}
 		else {
-			cout << "\t¾Æ½±±º¿ä!" << endl;
+			cout << "\tì•„ì‰½êµ°ìš”!" << endl;
 		}
 		i++;
 	}

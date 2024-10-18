@@ -36,7 +36,7 @@ Dept::~Dept() {
 }
 
 void Dept::read() {
-    cout << size << "°³ Á¡¼ö ÀÔ·Â>> ";
+    cout << size << "Â°Â³ ÃÂ¡Â¼Ã¶ Ã€Ã”Â·Ã‚>> ";
     for (int i = 0; i < size; ++i) {
         cin >> scores[i];
     }
@@ -52,5 +52,5 @@ int main() {
     Dept com(10); 
     com.read();   
     int n = countPass(com); 
-    cout << "60Á¡ ÀÌ»óÀº " << n << "¸í";
+    cout << "60ÃÂ¡ Ã€ÃŒÂ»Ã³Ã€Âº " << n << "Â¸Ã­";
 }

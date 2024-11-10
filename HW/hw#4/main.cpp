@@ -1,18 +1,18 @@
 #include "Printer.h"
 
 int main() {
-    cout << "ÇöÀç ÀÛµ¿ÁßÀÎ 2 ´ëÀÇ ÇÁ¸°ÅÍ´Â ¾Æ·¡¿Í °°´Ù" << endl;
-    cout << "À×Å©Á¬ : Officejet V40, HP, ³²Àº Á¾ÀÌ 5Àå, ³²Àº À×Å© 10" << endl;
-    cout << "·¹ÀÌÀú : SCX-6x45, »ï¼ºÀüÀÚ, ³²Àº Á¾ÀÌ 3Àå ³²Àº Åä³Ê 20" << endl;
+    cout << "í˜„ìž¬ ìž‘ë™ì¤‘ì¸ 2 ëŒ€ì˜ í”„ë¦°í„°ëŠ” ì•„ëž˜ì™€ ê°™ë‹¤" << endl;
+    cout << "ìž‰í¬ì ¯ : Officejet V40, HP, ë‚¨ì€ ì¢…ì´ 5ìž¥, ë‚¨ì€ ìž‰í¬ 10" << endl;
+    cout << "ë ˆì´ì € : SCX-6x45, ì‚¼ì„±ì „ìž, ë‚¨ì€ ì¢…ì´ 3ìž¥ ë‚¨ì€ í† ë„ˆ 20" << endl;
 
     InkJetPrinter* inkP = new InkJetPrinter("Officejet V40", "HP", 5, 10);
-    LaserPrinter* laserP = new LaserPrinter("SCX-6x45", "»ï¼ºÀüÀÚ", 3, 20);
+    LaserPrinter* laserP = new LaserPrinter("SCX-6x45", "ì‚¼ì„±ì „ìž", 3, 20);
 
     int type, count;
     string continuePrint;
 
     while (true) {
-        cout << "\nÇÁ¸°ÅÍ(1:À×Å©Á¬, 2:·¹ÀÌÀú)¿Í ¸Å¼ö ÀÔ·Â>>";
+        cout << "\ní”„ë¦°í„°(1:ìž‰í¬ì ¯, 2:ë ˆì´ì €)ì™€ ë§¤ìˆ˜ ìž…ë ¥>>";
         cin >> type >> count;
         if (type == 1) {
             inkP->print(count);
@@ -23,7 +23,7 @@ int main() {
         inkP->printInkJet(count);
         laserP->printLaser(count);
 
-        cout << "°è¼Ó ÇÁ¸°Æ® ÇÏ½Ã°Ú½À´Ï±î(y/n)>>";
+        cout << "ê³„ì† í”„ë¦°íŠ¸ í•˜ì‹œê² ìŠµë‹ˆê¹Œ(y/n)>>";
         cin >> continuePrint;
         if (continuePrint == "n" || continuePrint == "N")
             break;

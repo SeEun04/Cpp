@@ -1,24 +1,24 @@
 #include "Printer.h"
 
-// Printer Å¬·¡½ºÀÇ ¼Ò¸êÀÚ
+// Printer í´ë˜ìŠ¤ì˜ ì†Œë©¸ì
 Printer::~Printer() {}
 
-// ¸ğµ¨ ¼³Á¤
+// ëª¨ë¸ ì„¤ì •
 void Printer::setModel(string m) {
     model = m;
 }
 
-// Á¦Á¶»ç ¼³Á¤
+// ì œì¡°ì‚¬ ì„¤ì •
 void Printer::setManufacturer(string mf) {
     manufacturer = mf;
 }
 
-// ³²Àº ¿ëÁö ¼ö ¼³Á¤
+// ë‚¨ì€ ìš©ì§€ ìˆ˜ ì„¤ì •
 void Printer::setAvailableCount(int c) {
     availableCount = c;
 }
 
-// InkJetPrinter Å¬·¡½ºÀÇ »ı¼ºÀÚ
+// InkJetPrinter í´ë˜ìŠ¤ì˜ ìƒì„±ì
 InkJetPrinter::InkJetPrinter(string model, string manufacturer, int availableCount, int availableInk) {
     setModel(model);
     setManufacturer(manufacturer);
@@ -26,31 +26,31 @@ InkJetPrinter::InkJetPrinter(string model, string manufacturer, int availableCou
     this->availableInk = availableInk;
 }
 
-// InkJetPrinter Å¬·¡½ºÀÇ ¼Ò¸êÀÚ
+// InkJetPrinter í´ë˜ìŠ¤ì˜ ì†Œë©¸ì
 InkJetPrinter::~InkJetPrinter() {}
 
-// ÇÁ¸°Æ® ¸Ş¼­µå
+// í”„ë¦°íŠ¸ ë©”ì„œë“œ
 void InkJetPrinter::print(int pages) {
     if (availableCount < pages) {
-        cout << "¿ëÁö°¡ ºÎÁ·ÇÏ¿© ÇÁ¸°Æ®ÇÒ ¼ö ¾ø½À´Ï´Ù." << endl;
+        cout << "ìš©ì§€ê°€ ë¶€ì¡±í•˜ì—¬ í”„ë¦°íŠ¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;
     }
     else if (availableInk < pages) {
-        cout << "À×Å©°¡ ºÎÁ·ÇÏ¿© ÇÁ¸°Æ®ÇÒ ¼ö ¾ø½À´Ï´Ù." << endl;
+        cout << "ì‰í¬ê°€ ë¶€ì¡±í•˜ì—¬ í”„ë¦°íŠ¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;
     }
     else {
         availableCount -= pages;
         availableInk -= pages;
-        cout << "ÇÁ¸°Æ®ÇÏ¿´½À´Ï´Ù." << endl;
+        cout << "í”„ë¦°íŠ¸í•˜ì˜€ìŠµë‹ˆë‹¤." << endl;
     }
 }
 
-// À×Å©Á¬ ÇÁ¸°ÅÍ Á¤º¸ Ãâ·Â
+// ì‰í¬ì ¯ í”„ë¦°í„° ì •ë³´ ì¶œë ¥
 void InkJetPrinter::printInkJet(int pages) {
-    cout << model << ", " << manufacturer << ", ³²Àº Á¾ÀÌ " << availableCount <<
-        "Àå, ³²Àº À×Å© " << availableInk << endl;
+    cout << model << ", " << manufacturer << ", ë‚¨ì€ ì¢…ì´ " << availableCount <<
+        "ì¥, ë‚¨ì€ ì‰í¬ " << availableInk << endl;
 }
 
-// LaserPrinter Å¬·¡½ºÀÇ »ı¼ºÀÚ
+// LaserPrinter í´ë˜ìŠ¤ì˜ ìƒì„±ì
 LaserPrinter::LaserPrinter(string model, string manufacturer, int availableCount, int availableToner) {
     setModel(model);
     setManufacturer(manufacturer);
@@ -58,26 +58,26 @@ LaserPrinter::LaserPrinter(string model, string manufacturer, int availableCount
     this->availableToner = availableToner;
 }
 
-// LaserPrinter Å¬·¡½ºÀÇ ¼Ò¸êÀÚ
+// LaserPrinter í´ë˜ìŠ¤ì˜ ì†Œë©¸ì
 LaserPrinter::~LaserPrinter() {}
 
-// ÇÁ¸°Æ® ¸Ş¼­µå
+// í”„ë¦°íŠ¸ ë©”ì„œë“œ
 void LaserPrinter::print(int pages) {
     if (availableCount < pages) {
-        cout << "¿ëÁö°¡ ºÎÁ·ÇÏ¿© ÇÁ¸°Æ®ÇÒ ¼ö ¾ø½À´Ï´Ù." << endl;
+        cout << "ìš©ì§€ê°€ ë¶€ì¡±í•˜ì—¬ í”„ë¦°íŠ¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;
     }
     else if (availableToner < (pages / 2)) {
-        cout << "Åä³Ê°¡ ºÎÁ·ÇÏ¿© ÇÁ¸°Æ®ÇÒ ¼ö ¾ø½À´Ï´Ù." << endl;
+        cout << "í† ë„ˆê°€ ë¶€ì¡±í•˜ì—¬ í”„ë¦°íŠ¸í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤." << endl;
     }
     else {
         availableCount -= pages;
         availableToner -= (pages / 2);
-        cout << "ÇÁ¸°Æ®ÇÏ¿´½À´Ï´Ù." << endl;
+        cout << "í”„ë¦°íŠ¸í•˜ì˜€ìŠµë‹ˆë‹¤." << endl;
     }
 }
 
-// ·¹ÀÌÀú ÇÁ¸°ÅÍ Á¤º¸ Ãâ·Â
+// ë ˆì´ì € í”„ë¦°í„° ì •ë³´ ì¶œë ¥
 void LaserPrinter::printLaser(int pages) {
-    cout << model << ", " << manufacturer << ", ³²Àº Á¾ÀÌ " << availableCount <<
-        "Àå, ³²Àº Åä³Ê " << availableToner << endl;
+    cout << model << ", " << manufacturer << ", ë‚¨ì€ ì¢…ì´ " << availableCount <<
+        "ì¥, ë‚¨ì€ í† ë„ˆ " << availableToner << endl;
 }

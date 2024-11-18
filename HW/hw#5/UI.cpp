@@ -4,21 +4,21 @@ using namespace std;
 
 int UI::getMenu() {
 	int menu;
-	cout << "»ğÀÔ:1, »èÁ¦:2, ¸ğµÎº¸±â:3, Á¾·á:4 >> ";
+	cout << "ì‚½ì…:1, ì‚­ì œ:2, ëª¨ë‘ë³´ê¸°:3, ì¢…ë£Œ:4 >> ";
 	cin >> menu;
 	return menu;
 }
 
 int UI::getShapeMenu() {
 	int shapetype;
-	cout << "¼±:1, ¿ø:2, »ç°¢Çü:3 >> ";
+	cout << "ì„ :1, ì›:2, ì‚¬ê°í˜•:3 >> ";
 	cin >> shapetype;
 	return shapetype;
 }
 
 int UI::getShapedelete() {
 	int shapeIn;
-	cout << "»èÁ¦ÇÏ°íÀÚ ÇÏ´Â µµÇüÀÇ ÀÎµ¦½º >> ";
+	cout << "ì‚­ì œí•˜ê³ ì í•˜ëŠ” ë„í˜•ì˜ ì¸ë±ìŠ¤ >> ";
 	cin >> shapeIn;
 	return shapeIn;
 }
